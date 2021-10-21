@@ -6,6 +6,7 @@ const Container = styled.div`
   height: 60vh;
   background-color: #fcf5f5;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
 `;
@@ -14,7 +15,9 @@ const Title = styled.h1`
   font-size: 70px;
 `;
 const Description = styled.div`
-  font-size: 20px;
+  font-size: 24px;
+  font-weight: 300;
+  margin-bottom: 25px;
 `;
 
 const InputContainer = styled.div`
@@ -23,12 +26,19 @@ const InputContainer = styled.div`
   background-color: white;
   display: flex;
   justify-content: space-between;
-  border: 1pxs solid lightgray;
+  border: 1px solid lightgray;
 `;
-const Button = styled.button``;
+const Button = styled.button`
+flex: 1;
+border: none;
+background-color: teal;
+color: white;
+`;
+
 const Input = styled.input`
   border: none;
-  flex: 1;
+  flex: 8;
+  padding-left: 20px;
 `;
 
 const Newsletter = () => {
