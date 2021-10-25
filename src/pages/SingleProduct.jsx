@@ -9,6 +9,7 @@ const Container = styled.div``;
 
 const Wrapper = styled.div`
   padding: 50px;
+  display: flex;
 `;
 const ImgContainer = styled.div`
   flex: 1;
@@ -23,16 +24,21 @@ const InfoContainer = styled.div`
   padding: 0px 50px;
 `;
 const Title = styled.h1`
-font-weight: 200;
+  font-weight: 200;
 `;
 const Desc = styled.p`
-margin: 20px 0px;
-
+  margin: 20px 0px;
 `;
 const Price = styled.span`
-font-weight: 200;
-font-size: 40px;
+  font-weight: 100;
+  font-size: 40px;
 `;
+const FilterContainer = styled.div``;
+const Filter = styled.div``;
+const FilterColor = styled.div``;
+const FilterTitle = styled.div``;
+
+
 
 const SingleProduct = () => {
   return (
@@ -52,6 +58,14 @@ const SingleProduct = () => {
             Natus.
           </Desc>
           <Price>$19.99</Price>
+          <FilterContainer>
+              <Filter>
+                  <FilterTitle>Color</FilterTitle>
+                  <FilterColor color="black"/>
+                  <FilterColor color="darkblue"/>
+                  <FilterColor color="gray"/>
+              </Filter>
+          </FilterContainer>
         </InfoContainer>
       </Wrapper>
       <Newsletter />
