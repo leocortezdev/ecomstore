@@ -5,10 +5,12 @@ import ProductList from './pages/ProductList';
 import SingleProduct from './pages/SingleProduct';
 import Register from './pages/Register';
 import Login from './pages/Login';
+import CheckoutCart from './pages/CheckoutCart';
+
 
 const App = () => {
    return (
-       <Login />
+        <CheckoutCart />
    )
 }
 
