@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import Navbar from "../components/Navbar";
 
 const Container = styled.div`
   width: 100vw;
@@ -20,7 +21,6 @@ const Wrapper = styled.div`
   width: 25%;
   padding: 20px;
   background-color: white;
-  
 `;
 
 const Title = styled.h1`
@@ -59,18 +59,21 @@ const Link = styled.a`
 
 const Login = () => {
   return (
-    <Container>
-      <Wrapper>
-        <Title>SIGN IN</Title>
-        <Form>
-          <Input placeholder="username" />
-          <Input placeholder="password" />
-          <Button>LOGIN</Button>
-          <Link>Forgot Password?</Link>
-          <Link>New? Create Account</Link>
-        </Form>
-      </Wrapper>
-    </Container>
+    <>
+      <Navbar />
+      <Container>
+        <Wrapper>
+          <Title>SIGN IN</Title>
+          <Form>
+            <Input placeholder="username" />
+            <Input placeholder="password" />
+            <Button>LOGIN</Button>
+            <Link>Forgot Password?</Link>
+            <Link>New? Create Account</Link>
+          </Form>
+        </Wrapper>
+      </Container>
+    </>
   );
 };
 

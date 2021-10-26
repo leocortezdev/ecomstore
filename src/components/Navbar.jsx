@@ -2,6 +2,8 @@ import { Badge } from "@material-ui/core";
 import { Search, ShoppingCartOutlined } from "@material-ui/icons";
 import React from "react";
 import styled from "styled-components";
+import { BrowserRouter as Router, Link } from "react-router-dom";
+
 
 const Container = styled.div`
   height: 60px;
@@ -52,8 +54,6 @@ const Logo = styled.h1`
   font-weight: bold;
 `;
 
-
-
 const Right = styled.div`
   flex: 1;
   display: flex;
@@ -63,29 +63,41 @@ const Right = styled.div`
 
 const Navbar = () => {
   return (
-    <Container>
-      <Wrapper>
-        <Left>
-          <Language>EN</Language>
-          <SearchContainer>
-            <Input />
-            <Search style={{color: 'gray', fontSize: 16}}/>
-          </SearchContainer>
-        </Left>
-        <Center>
-          <Logo>LeocK.</Logo>
-        </Center>
-        <Right>
-          <MenuOption>Register</MenuOption>
-          <MenuOption>Sign-In</MenuOption>
-          <MenuOption>
-            <Badge badgeContent={4} color="primary">
-              <ShoppingCartOutlined />
-            </Badge>
-          </MenuOption>
-        </Right>
-      </Wrapper>
-    </Container>
+    <Router forceRefresh={true}>
+      <Container>
+        <Wrapper>
+          <Left>
+            <Language>EN</Language>
+            <SearchContainer>
+              <Input />
+              <Search style={{ color: "gray", fontSize: 16 }} />
+            </SearchContainer>
+          </Left>
+          <Center>
+            <Logo>
+              <Link className="navbar-link" to="/">
+                LeocK.
+              </Link>
+            </Logo>
+          </Center>
+          <Right>
+            <MenuOption>
+              <Link className="navbar-link" to="/register">
+                Register
+              </Link>
+            </MenuOption>
+            <MenuOption>              <Link className="navbar-link" to="/login">
+                Login
+              </Link></MenuOption>
+            <MenuOption>
+              <Badge badgeContent={4} color="primary">
+                <ShoppingCartOutlined />
+              </Badge>
+            </MenuOption>
+          </Right>
+        </Wrapper>
+      </Container>
+      </Router>
   );
 };
 
