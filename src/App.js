@@ -21,7 +21,9 @@ const App = () => {
            <Route path="/items">
                <ProductList />
            </Route>
-
+           <Route path="/checkout">
+               <CheckoutCart />
+           </Route>
 
            <Route path="/">
                 <Home />

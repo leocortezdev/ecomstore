@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import Navbar from "../components/Navbar";
-
+import { BrowserRouter as Router, Link } from "react-router-dom";
 const Container = styled.div`
   width: 100vw;
   height: 100vh;
@@ -50,7 +50,7 @@ const Button = styled.button`
   margin-bottom: 10px;
 `;
 
-const Link = styled.a`
+const LoginLink = styled.a`
   margin: 5px 0px;
   font-size: 12px;
   text-decoration: underline;
@@ -60,19 +60,25 @@ const Link = styled.a`
 const Login = () => {
   return (
     <>
-      <Navbar />
-      <Container>
-        <Wrapper>
-          <Title>SIGN IN</Title>
-          <Form>
-            <Input placeholder="username" />
-            <Input placeholder="password" />
-            <Button>LOGIN</Button>
-            <Link>Forgot Password?</Link>
-            <Link>New? Create Account</Link>
-          </Form>
-        </Wrapper>
-      </Container>
+      <Router forceRefresh={true}>
+        <Navbar />
+        <Container>
+          <Wrapper>
+            <Title>SIGN IN</Title>
+            <Form>
+              <Input placeholder="username" />
+              <Input placeholder="password" />
+              <Button>LOGIN</Button>
+              <LoginLink>Forgot Password?</LoginLink>
+              <LoginLink>
+                <Link className="navbar-link" to="/register">
+                  New? Create Account
+                </Link>
+              </LoginLink>
+            </Form>
+          </Wrapper>
+        </Container>
+      </Router>
     </>
   );
 };
